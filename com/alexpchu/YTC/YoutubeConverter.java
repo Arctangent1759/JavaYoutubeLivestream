@@ -75,8 +75,6 @@ public class YoutubeConverter {
     if (args.length >= 1) {
       input = args[0];
     }
-    System.out.println(args.length);
-    System.out.println(input);
     try {
       System.out.println(GetStream(input));
     } catch (IOException e) {

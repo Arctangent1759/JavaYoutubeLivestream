@@ -12,7 +12,11 @@ class QSPair {
     String[] kv = s.split("=");
     key = kv[0];
     try {
-      value = URLDecoder.decode(kv[1], "UTF-8");
+      if (kv.length == 2) {
+        value = URLDecoder.decode(kv[1], "UTF-8");
+      } else {
+        value = "";
+      }
     } catch (UnsupportedEncodingException e) {
       System.err.println("Assertion failed: Querystring should be in a supported format.");
       assert(false);
